@@ -107,8 +107,24 @@ export default {
       log("called fbq('track', 'PageView');");
     }
   },
+  
+  track(title, data) {
+    if (!verifyInit()) {
+      return;
+    }
 
-  track(title, data, eventData) {
+    fbq('track', title); // eslint-disable-line no-undef
+
+    if (debug) {
+      log(`called fbq('track', '${title}');`);
+
+      if (data) {
+        log('with data', data);
+      }
+    }
+  },
+  
+  trackWithEventData(title, data, eventData) {
     if (!verifyInit()) {
       return;
     }
