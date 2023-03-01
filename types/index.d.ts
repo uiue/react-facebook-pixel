@@ -172,6 +172,7 @@ export function init(
 ): void;
 export function pageView(): void;
 export function track(title: string, data?: Data | any): void;
+export function trackWithEventData(title: string, data?: Data | any, eventData?: Data | any): void;
 export function trackCustom(title: string, data?: Data | any): void;
 export function trackSingle(
   pixel: string,
