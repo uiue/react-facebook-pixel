@@ -129,7 +129,7 @@ export default {
       return;
     }
 
-    fbq('track', title, eventData); // eslint-disable-line no-undef
+    fbq('track', title, data, eventData); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('track', '${title}');`);
